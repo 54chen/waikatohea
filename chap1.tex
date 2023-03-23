@@ -1,0 +1,95 @@
+\chapter{Data collection}
+
+\section*{Introduction}
+\lettrine[lines=2]{L}\\ onrix's business scenario requires the scanning of the road by means of a camera placed in a moving vehicle at about 50km/h to produce measurements of the target in both horizontal and vertical directions.
+
+\paragraph*{}
+In this first chapter, we will start with some basic definitions and then focus on how ZED cameras can collect data at a variety of speeds, angles and altitudes.
+
+\section{ZED camera}
+ 
+
+\section{Camera optical concepts}
+
+\subsection{Polariser}
+
+ \subsection{Shutter mode}
+ 
+\subsection{Automatic exposure}
+ 
+\subsection{Focal length lens}
+
+ 
+\section{Basic assumptions for data collection}
+
+ 
+\section{Data collection environment}
+ 
+
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
+  \caption{Screenshot of Zed Explorer }
+  \label{zede}
+\end{figure} 
+
+You can find settings to turn off auto-exposure and a range of other parameters.
+They are only valid before each recording, and these values can no longer be changed in the finished SVO file.
+
+The resolution and FPS can be adjusted in the multi selection in the top left corner, but only before the svo recording starts. 
+If this option only has a very low resolution, it is because the usb cable is faulty and cannot support high speed transfers.
+
+\section{All collected datasets}
+
+ 
+\subsection{Feb. 10 at Hillcrest}
+ 
+SN31380347\_10-54-05.svo (this file is from Feb. 15 to fix the frame lost issue).
+
+\subsection{Feb. 15 at Hillcrest}
+
+This dataset tried to fix the issue of previous one. 
+
+\subsection{Feb. 10 at MacDonald}
+
+This data was collected for very slow speeds (less than 20km/h) with obvious problems on the ground.
+
+\subsection{Feb. 20 at Lonrix Office}
+
+This dataset was collected on the ground in the car park outside the Lonrix office and the distances were marked using a measuring tape.
+
+\subsection{Feb. 21 near Lonrix Office}
+
+This dataset collected vertical poles and traffic signs within different ranges inlcuding 5m and 10m. 
+
+\subsection{Mar. 02 near the University of Waikato}
+
+This dataset collected some vertical traffic signs that have been measured in person to obtain ground truth.
+
+\section{Overview of the collection}
+
+Overall, care should be taken when collecting data to make adjustments to optical parameters. 
+
+\subsection{Camera positions and angles}
+
+\renewcommand{\labelitemi}{$\blacksquare$}
+\begin{itemize}     
+    \item As the accurate range of the camera is limited, the closer the camera is positioned to the target object the better, but as the camera requires a USB cable connection, be sure to note that a long USB cable is required.
+
+    \item Whether on the top or on the bonnet of the car, the difference is not that great.
+    
+    \item The angle of the camera has an effect, especially on more distant vertical targets.
+    
+    \item It is important to keep the camera angle as perpendicular to the ground as possible, otherwise this will result in more long-tailed vertical pole point clouds.
+\end{itemize}
+
+\subsection{USB3.0}
+
+ZED cameras use USB 3.0 in order to transfer data in high resolution, but the camera interface is USB-C. 
+
+\subsection{ZED SDK and GPU}
+
+The ZED SDK only supports Windows and Ubuntu and does not support macOS. 
+
+\section*{Conclusion}
+Collecting data with the ZED is relatively easy, but hardware preparation especially USB cables, GPU machines, or the right model of camera itself can make collection difficult.
+
