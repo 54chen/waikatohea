@@ -1,176 +1,76 @@
-\chapter{Problem objectives and findings}
+\chapter{Comparative study and analysis}
 
 \section*{Introduction}
 
-\lettrine[lines=2]{A}\\s some parameters are already given in the official documentation, a qualitative analysis based on the data we have collected, only for each particular type of scenario, makes it possible to derive through this report the effective distance and the conditions to be noted for the ZED camera in outdoor conditions.
+\lettrine[lines=2]{A}\\s In order to achieve the objectives of the project, Group 2 researched some of the typical platforms that are currently popular in the industry and analysed their main features, with the aim of incorporating their strengths in the project. Popular software used for the development of digital library systems and platforms include Greenstone, Dspace, Invenio, Omeka S, EPrints, Mukurtu.
 
-\section{A general comparison of horizontal and vertical measurements}
+\section{Key Features of typical platforms}
 
-\subsection{Datasets used}
+\subsection{Greenstone}
 
-In this section the Hillcrest data is selected for an experimental summary. 
+Greenstone is basically a relatively complete open source software to meet the needs of the general digital library, but also very suitable for newcomers to start. Its main features are support for multiple languages, multiple digital material formats and cross-platform. greenstone can run on multiple operating systems, including Windows, Mac OS X, Linux, etc. In addition, greenstone supports a variety of open standards and protocols, such as OAI-PMH, Dublin Core, MARC, etc., can Easily integrate digital libraries and web publications with other systems.
 
-\subsection{Objective and method}
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a2.jpg}}
+  \caption{Greenstone}
+\end{figure}
 
-In the hillcrest dataset there is a traffic sign and some small short lines. 
 
-\subsection{Results}
 
-To better display the results, the data presentation has been condensed into a table, as shown in table \ref{fig:Results1}.
+\subsection{Dspace}
 
-\begin{table}[!h]
-  \begin{center}
-   \begin{tabular}{| p{2cm} | p{2cm} | p{5cm} | p{5cm} |}
-      \hline
-        Position & Resolution & Horizontal & Vertical  \\ \hline	    
-        Top & 720 & 0.9m-1.1m/1m/<10m/easy & 1.92m-1.98/2.1m/<7m/intermediate \\ \hline
-        Top & 1080 & 0.88m-1m/1m/<10m/easy & 2.05m-2.13/2.1m/<9m/intermediate \\ \hline
-        Top & 2k & 0.85-1.01m/1m/<9m/intermediate & 2.49-2.93m/2.1m/<9m/hard \\ \hline
-        Bonnet & 720 & 0.9-1.01m/1m/<10m/intermediate & 1.92-2.09m/2.1m/<9m/easy \\ \hline
-        Bonnet & 1080 & 0.8-1.2m/1m/>10m/intermediate & 2.38-2.57m/2.1m/>11m/hard \\ \hline
-        Bonnet & 2k & 0.8-0.97m/1m/8.6m/intermediate & 2.06-2.08m/2.1m/1.8m/easy \\ \hline
-      \end{tabular}
-      \caption{Results of Horizontal and Vertical objectives}
-    \label{fig:Results1}
-  \end{center}
-  \end{table}
+DSpace is an open source digital repository software, the main features of DSpace are its security and community support, DSpace provides a complete permission management system that helps users control who can access and edit the content in the repository while keeping the content secure. 
 
-Several different values for the data in the result column of the table represent, respectively, the distribution of measured fetch values, ground truth, the estimated distance from the camera, and the perceptual measurement difficulty.
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a2-2.jpg}}
+  \caption{Dspace}
+\end{figure}
 
-\subsection{Findings}
+\subsection{Invenio}
 
-\renewcommand{\labelitemi}{$\square$}
-\begin{itemize}     
-    \item The higher position of the camera is not a significant improvement in accuracy.
+Invenio is a framework and not a repository software delivered directly. So it requires developers to develop code to refine the implementation of their own platform. Its main features are the powerful search functionality and the ability to handle data storage. It uses all the features of Elasticsearch.
 
-    \item The higher camera resolution is not a significant improvement in accuracy.
-    
-    \item Horizontal measurements are significantly easier than vertical ones.
-    
-\end{itemize}
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a.jpg}}
+  \caption{Invenio}
+\end{figure}
 
-\section{General comparison of hand-held camera recordings}
 
-\subsection{Datasets used}
+\subsection{Omeka S}
+It is a free, open source web application for creating and managing digital documents and online exhibitions.The main feature of Omeka S is the customisable exhibition functionality, with custom exhibition settings based on user needs and support for a wide range of exhibition templates and themes.
 
-Because the previous measurements would have revealed difficulties with vertical targets, a series of handheld data collection was done. 
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a3.jpg}}
+  \caption{Omeka S}
+\end{figure}
 
-\subsection{Objective and method}
+\subsection{EPrints}
+The main features of EPrints are its support for a wide range of metadata standards and its statistical and analytical functions. It supports a wide range of metadata standards to facilitate the input and output of data. In addition, its statistical and analytical features help users to understand the usage of the digital repository, user preferences for resources, etc.
 
-In this dataset there is a total of 1 horizontal target and 3 vertical targets at different ranges of 5m and 10m from the camera. 
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a5.jpg}}
+  \caption{EPrints}
+\end{figure}
 
-\subsection{Various scenarios: Horizonal pavements }
+\subsection{Mukurtu}
+Mukurtu is an open source digital library and community framework. Its most important feature is that it provides a way of managing cultural heritage that can help preserve and pass on the heritage of a culture. mukurtu's emphasis on community collaboration allows community members to participate in the management and sharing of cultural heritage. In addition, Mukurtu supports the creation and management of cultural protocols, allowing cultural heritage to be managed and shared in accordance with the traditional cultural protocols and norms of the community. This feature allows for the conservation of cultural heritage and the interchange of cultures within the project.
 
-\subsubsection{Results}
 
-From table \ref{fig:Horizonal pavements}, there are 12 different cases. 
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a6.jpg}}
+  \caption{Mukurtu}
+\end{figure}
 
-\begin{table}[]
-  \begin{tabular}{lllllll}
-  \rowcolor[HTML]{4472C4} 
-  No. & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Resolution} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Mode} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Ground Truth} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range in the view} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Result} \\
-  1   & 5m                                                & 2k                                                     & Neural                                           & 0.3m*0.5m                                                & 1.2m                                                          & 0.322m*0.429m                                      \\
-  2   & 5m                                                & 1080                                                   & Neural                                           & 0.3m*0.5m                                                & 1.2m                                                          & 0.291m*0.464m                                      \\
-  3   & 5m                                                & 720                                                    & Neural                                           & 0.3m*0.5m                                                & 2.2m                                                          & 0.297m*0.423m                                      \\
-  4   & 10m                                               & 2k                                                     & Neural                                           & 0.3m*0.5m                                                & 6.2m                                                          & 0.293m*0.446m                                      \\
-  5   & 10m                                               & 1080                                                   & Neural                                           & 0.3m*0.5m                                                & 5.5m                                                          & 0.304m*0.522m                                      \\
-  6   & 10m                                               & 720                                                    & Neural                                           & 0.3m*0.5m                                                & 7m                                                            & 0.303m*0.545m                                      \\
-  7   & 5m                                                & 2k                                                     & Ultra                                            & 0.3m*0.5m                                                & 1.5m                                                          & 0.309m*0.457m                                      \\
-  8   & 5m                                                & 1080                                                   & Ultra                                            & 0.3m*0.5m                                                & 1.5m                                                          & 0.309m*0.469m                                      \\
-  9   & 5m                                                & 720                                                    & Ultra                                            & 0.3m*0.5m                                                & 2.5m                                                          & 0.312m*0.462m                                      \\
-  10  & 10m                                               & 2k                                                     & Ultra                                            & 0.3m*0.5m                                                & 6.2m                                                          & 0305m*0.333m                                       \\
-  11  & 10m                                               & 1080                                                   & Ultra                                            & 0.3m*0.5m                                                & 5.3m                                                          & 0.298m*0.857m                                      \\
-  12  & 10m                                               & 720                                                    & Ultra                                            & 0.3m*0.5m                                                & 6.1m                                                          & 0.299m*0.497m                                     
-  \end{tabular}
-  \caption{Results of Horizonal pavements}
-  \label{fig:Horizonal pavements}
-  \end{table}
 
-\subsubsection{Findings}
+\section{Comparison Chart}
+Group 2 has selected a few key attributes that need to be met in a project, comparing the six popular open source software for creating digital libraries mentioned above and creating the following comparison chart. These key attributes can be used to target the advantages of some platforms into our projects.
 
-It works very well under NEURAL depth mode within the range between 0-10m (1.5m-7m showing in the picture) when it comes pavements. 
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/a2-1.jpg}}
+  \caption{Comparison Chart}
+\end{figure}
 
-\subsection{Various scenarios: Vertical signs under backlights}
 
-\subsubsection{Results}
-
-It is shown as table \ref{fig:backlights}.
-
-\begin{table}[]
-  \begin{tabular}{lllllll}
-  \rowcolor[HTML]{4472C4} 
-  No. & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Resolution} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Mode} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Ground Truth} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range in the view} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Result} \\
-  13  & 5m                                                & 720                                                    & Neural                                           & Pole:2.5m                                                & 1.5m                                                          & 6.19m                                              \\
-  14  & 5m                                                & 720                                                    & Neural                                           & Sign:4m                                                  & 1.5m                                                          & 4.0m                                               \\
-  15  & 5m                                                & 720                                                    & Ultra                                            & Pole:2.5m                                                & 1.5m                                                          & 2.7m                                               \\
-  16  & 5m                                                & 720                                                    & Ultra                                            & Sign:4m                                                  & 1.5m                                                          & NaN                                               
-  \end{tabular}
-  \caption{Results of Vertical signs under backlights}
-  \label{fig:backlights}
-\end{table}
-
-\subsubsection{Findings}
-
-Lights make a seriously impact on the Neural depth mode results. 
-
-\subsection{Various scenarios: Vertical signs under normal sun light }
-
-\subsubsection{Results}
-
-It is shown as table \ref{fig:sunlight}
-
-\begin{table}[]
-  \begin{tabular}{lllllll}
-  \rowcolor[HTML]{4472C4} 
-  No. & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Resolution} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Mode} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Ground Truth} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range in the view} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Result} \\
-  17  & 5m                                                & 720                                                    & Neural                                           & Pole:2.5m                                                & 1.7m                                                          & 2.62m                                              \\
-  18  & 5m                                                & 720                                                    & Neural                                           & Sign:4m                                                  & 1.7m                                                          & 5.1m                                               \\
-  19  & 5m                                                & 1080                                                   & Neural                                           & Pole:2.5m                                                & 0.8m                                                          & 2.65m                                              \\
-  20  & 5m                                                & 1080                                                   & Neural                                           & Sign:4m                                                  & 0.8m                                                          & 5.37m                                              \\
-  21  & 10m                                               & 1080                                                   & Neural                                           & Pole:2.5m                                                & 6.5m                                                          & 3.69m                                              \\
-  22  & 10m                                               & 1080                                                   & Neural                                           & Sign:4m                                                  & 6.5m                                                          & 4.13m                                              \\
-  23  & 10m                                               & 1080                                                   & Ultra                                            & Pole:2.5m                                                & 6.5m                                                          & 2.76m                                              \\
-  24  & 10m                                               & 1080                                                   & Ultra                                            & Sign:4m                                                  & 6.5m                                                          & NaN                                               
-  \end{tabular}
-\caption{Results of Vertical signs under normal sun light}
-\label{fig:sunlight}
-\end{table}
-
-\subsubsection{Findings}
-
-Ultra mode will enhance the pole height accuracy but will not get the sign height. 
-
-\subsection{Various scenarios: Small reflection objects  }
-
-\subsubsection{Results}
-
-The result is shown as table \ref{fig:small}.
-
-\begin{table}[]
-  \begin{tabular}{lllllll}
-  \rowcolor[HTML]{4472C4} 
-  No. & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Resolution} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Mode} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Ground Truth} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Range in the view} & \multicolumn{1}{c}{\cellcolor[HTML]{4472C4}Result}                    \\
-  25  & 5m                                                & 1080                                                   & Ultra                                            & Pole:0.97m                                               & 1.2m                                                          & 0.82/0.906                                                            \\
-  26  & 5m                                                & 720                                                    & Ultra                                            & Panel:0.38m*1.01m                                        & 1.2m                                                          & \begin{tabular}[c]{@{}l@{}}NaN * 1.08m \\ Top width: NaN\end{tabular} \\
-  27  & 10m                                               & 1080                                                   & Ultra                                            & Pole:0.97m                                               & 6.6m                                                          & 0.807/0.919                                                           \\
-  28  & 10m                                               & 1080                                                   & Ultra                                            & Panel:0.38m*1.01m                                        & 6.6m                                                          & NaN*3.21m                                                             \\
-  29  & 5m                                                & 1080                                                   & Neural                                           & Pole:0.97m                                               & 1.2m                                                          & 0.861/0.818                                                           \\
-  30  & 5m                                                & 1080                                                   & Neural                                           & Panel:0.38m*1.01m                                        & 1.2m                                                          & 2.66m*0.9m                                                            \\
-  31  & 10m                                               & 1080                                                   & Neural                                           & Pole:0.97m                                               & 6.6m                                                          & 1.13/1.33                                                             \\
-  32  & 10m                                               & 1080                                                   & Neural                                           & Panel:0.38m*1.01m                                        & 6.6m                                                          & 2.94m*1.24m                                                          
-  \end{tabular}
-\caption{Results of Small reflection objects}
-\label{fig:small}
-\end{table}
-\subsubsection{Findings}
-
-Neural mode is trying to merge closed pixels by nerual network models so the border area will be not accurate under it. 
-
-\section*{Conclusion}
-
-In this chapter, we have completed a perceptual evaluation of the accuracy of the ZED camera data under a wide range of conditions.
-
-\paragraph*{}
-
-In the next chapter, we will introduce algorithms to accomplish the enhancement of the depth accuracy and thus the measurement accuracy.
+\section{Conclusion}
+The main features of six popular open source software for creating digital libraries were analysed through a study of their main features, and according to the requirements of the project, to achieve the transmission and preservation of Māori culture, there was also a need to provide a platform space to allow cultural exchange between members. These requirements are the main aims that need to be achieved. But for the essence of the platform such as data security, multimedia files, cost etc. these are the factors that need to be considered. It is possible to combine the different characteristics of the above platforms and incorporate their main strengths to create the project.
 
