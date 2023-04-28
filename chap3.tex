@@ -1,224 +1,113 @@
-\chapter{In-depth study of 3D Registration}
+\chapter{Frontend Design}
 
 \section{Introduction}
-\lettrine[lines=2]{I}\\n order to obtain highly accurate depth images over a large range on a low accuracy device, it becomes possible to stitch multiple frames from the camera by aligning the point cloud.
-The high accuracy over a short range is extended to the accuracy over a long range by algorithms.
+\lettrine[lines=2]{I}\\n this chapter, we will summarise all the previous research, with a particular focus on users, book format reading experience, sharing, communication and other functions in detail. 
+At the same time, we will filter the common E-book formats available on the market from a technical perspective, expecting to find a suitable format among them.
 
-\subsection{3D reconstruction and Depth estimation}
- 
-It requires a device that supports time-of-flight (TOF) lasers, microwaves or 3D ultrasound. 
+\section{Research summary}
 
-\subsection{Depth and Point clouds}
-
-The depth information can be used to generate point clouds, or to augment existing point clouds with additional depth information. 
-
-\subsection{Point clouds and Registration}
-
-Point cloud registration is often used to combine or merge multiple point clouds into a single, comprehensive model of a scene or object. 
-
-\subsection{ICP}
-
-Iterative closest point (ICP) is a widely used algorithm in 3D computer vision and robotics for aligning and registering two or more point clouds or 3D models. 
-
-\subsection{SVO file format}
-
-SVO is the recorded video file format from the ZED camera. 
-
-\section{Direct performance of the ZED camera without any processing}
-
-For fast svo file processing, a toolbox project was implemented. In this project, the most important data is the depth data that can be dump from SVO file and stored as npz file.
-
-\begin{lstlisting}
-
-  distance = math.sqrt((X1 - X2) * (X1 - X2) +
-                        (Y1 - Y2) * (Y1- Y2) +
-                       (Z1 - Z2) * (Z1 - Z2))
-                      
-\end{lstlisting}
-
-\subsection{Parameters of ZED}
-
-Because ZED uses both Neural models and stereo methods to predict the depth value, there are a lot of parameters. 
-
-
-\begin{lstlisting}
-
-  depth_mode = NEURAL 
-  depth_minimum_distance = 0.01 m 
-  depth_maximum_distance = 30 m 
-
-\end{lstlisting}
-
-These parameters can be modified after the SVO has been generated.
-
-\subsection{Best working distance}
-
-The camera, which is ZED 2i 2.1mm with polarizer, works well in the outdoor environment when the depth value is in the near range (0m-7.5m).
-
-\subsection{Resolutions}
-
-The higher resolution will provide more details but the FPS will be reduced. 
-
-\subsection{The shortage of ZED}
-
- 
-In Lonrix scenario, the most common objective is the traffic sign, which is a white or blue metal panel. (Fig.~\ref{fig2c}.)
+The structure of the book resources shown as Fig~\ref{fig30} is supported by most of the current platforms. 
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=250pt]{images/UoW.jpg}}
-  \caption{Different surfaces and ranges}
-  \label{fig2c}
-\end{figure}
-
-
-It is not too bad when close enough in the actual test results.
-
-\subsection{Results}
-
-There are a lot of highly accurate measurements that results in different resolutions and speeds, which is shown in Fig.~\ref{fig2d}. 
- 
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=250pt]{images/UoW.jpg}}
-  \caption{Results in different ranges}
-  \label{fig2d}
-\end{figure}
-
-Fig.~\ref{fig2d2} shows an example of the different values for the same white line.
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{2.86m vs 4.08m}
-  \label{fig2d2}
-\end{figure}
-
-A sufficiently dense and accurate point cloud is the basis for accurate measurements.
-
-\section{Optimising point clouds}
-
-There are quite a few issues if the range is beyond 7m. 
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{HD2k/50km/h, open3d image, 14m}
+  \centerline{\includegraphics[width=500pt]{images/collections.png}}
+  \caption{Collections}
   \label{fig30}
 \end{figure}
 
-\subsection{ICP registration}
+Commonly supported data formats are E-books, audio, video and pictures. 
+They are all grouped together by subject, similar to how a library book index is managed. 
+Because the audio is often in the form of a playlist, it is a little deeper in the hierarchy. 
 
-Fig.~\ref{fig3a} shows the single frame that only keeps 7m.
+User sharing and connection is a weakness of these platforms.
+This is because the fact that platforms are often seen as purely online libraries.
+It is common that a platforms do not take into account the online user community.
 
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{HD720 50km/h Frame No. 38 }
-  \label{fig3a}
-\end{figure}
+\section{Demo}
 
- With the camera pose data, a pose matrix can be generated, which makes it easier to convert from local to world coordinates
+In this initial demo, our main considerations are compatibility and usability.
 
-\subsection{More on 3d reconstruction}
+\subsection{compatibility}
 
-Because of the ICP registration, it is possible to get entire 3d model in an area, so that it is possible to get the measurements at various angles.
+Because the user range is 13 to 18 years old and there is a possibility of future expansion to other user ranges, compatibility is the first thing. 
+This is because good compatibility across multiple devices will minimise the cost of future development for the habits of different age groups.
+They can use this platform on multiple devices.
 
-\section{Code}
+As same as other common platforms, we can take HTML5 responsive development to get an interface that is compatible with both pc and mobile devices.
+So that only one development is needed to get a consistent user experience on PC, mobile, ipad and other devices at the same time.
 
-The toolbox project can deal with the SVO files and do the measurements. 
+\subsection{usability}
 
-\subsection{Dump files from SVO file}
+Usability is mainly concerned with the different experiences with different file formats.
+It is also known as the reader experience. 
 
-This file is used for dumping the SVO file into there kinds of file: JPG, PCD and NPZ.
+\subsubsection{Books}
 
-\begin{lstlisting}
-
-  mkdir -p example_files/UNI-HD720/
-  python runtools.py -f ~/Downloads/mar02/HD720_SN31380347\_14-31-25.svo -s example_files/UNI-HD720/ -g 1
-
-\end{lstlisting}
-
-The parameters represent the address of the SVO file, the directory to which it is exported, and the number of frames between each export.
-
-\subsection{Do frame measurement showing as single color image}
-
-\begin{lstlisting}
-
-python runtools.py -t 3 -f example_files/UNI-HD720/ -frame 730 -show 1
-
-\end{lstlisting}
-
-The result will display an image, and the selected distance can be shown by clicking with a mouse. 
-
-\subsection{Do frame measurement showing as left depth plus image mode}
-
-\begin{lstlisting}
-
-python runtools.py -t 3 -f example_files/UNI-HD720/ -frame 730 -show 2
-
-\end{lstlisting}
-
-\subsection{Do frame measurement under the YOLO result}
-
-This command requires YOLO installation in advance.
-
-\begin{lstlisting}
-
-  python runtools.py -t 3 -f example_files/UNI-HD720/ -frame 730 -show 3
-
-\end{lstlisting}
-
-\subsection{Run colored ICP}
-
-This tool will remove the pavement and the long tails of the pole.
-
-\begin{lstlisting}
-
-python runtools.py -t 4 -f example_files/UNI-HD720/ -frame 730 -rp 1 -rl 1
-
-\end{lstlisting}
-
-\begin{figure}[!ht]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{Screenshot of colored ICP }
-  \label{fig311}
-\end{figure}
-
-\subsection{Run manual registration then run a micro distance ICP}
-
-\begin{lstlisting}
-
-python runtools.py -t 4 -f example_files/UNI-HD720/ -frame 730 -a 2
-
-\end{lstlisting}
-
-This tool will not remove the pavement and the long tails of the pole. 
+A reader in book format is shown in the left of Fig~\ref{fig31}.
+The most important elements are page turning, sharing and commenting. 
+Turning pages allows a book to be partly free and partly paid for or partly open to visitors in the future. 
+Sharing and commenting is a very important place to keep people of the tribe connected. 
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{Screenshot of manual ICP }
-  \label{fig312}
+  \centerline{\includegraphics[width=500pt]{images/Book.png}}
+  \caption{Books, Videos, Audios Readers}
+  \label{fig31}
 \end{figure}
 
-\subsection{Run RANSAC registration}
+\subsubsection{Videos}
 
-\begin{lstlisting}
+The reader for videos is shown in the middle of Fig~\ref{fig31}. 
+It needs to be a very versatile video player. 
+Unlike the last one, its key features need to include subtitles, volume, progress bars and so on.
 
-python runtools.py -t 4 -f example_files/UNI-HD720/ -frame 730 -a 3
+\subsubsection{Audios} 
 
-\end{lstlisting}
+The reader for audios is shown in the right of Fig~\ref{fig31}. 
+It needs to work as well as some mp3 online players. 
+Its important features need to include previous song, next song, jumbled play and possibly lyrics like subtitles too.
 
- This tool will not remove the pavement and the long tails of the pole. 
+\subsubsection{Images}
 
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=200pt]{images/UoW.jpg}}
-  \caption{Screenshot of RANSAC }
-  \label{fig313}
-\end{figure} 
+The reader for images is similar as books. 
+There may be a need for a previous next picture viewing mode.
+And there may be a choice of resolutions to suit the speed of the network.
 
+\section{E-book formats}
+We have collected and collated a range of E-book data formats (Table \ref{fig32}) and selected the ones that suit this project.
+They are only aggregated from a technical level so they are senseless to end users. 
+In the actual project, there is also the possibility of adapting the final data format to suit the trade-off between network speed and resource quality.
 
-\section{Conclution and future work}
+On the other hand, if the current file formats fail to meet the requirements, it may be necessary to develop a proprietary format to achieve the optimal user experience.
 
-The ZED camera provides a reliable and accurate 3D sensing solution with high-quality depth sensing and stereo imaging capabilities in specific range.
+\begin{table}[h]
+  \centering
+  \caption{Ebook formats}
+  \begin{tabular}{|c|p{10cm}|}
+  \hline
+  \textbf{Ebook format} & \textbf{Description} \\
+  \hline
+  EPUB & A widely used open standard for ebooks that supports reflowable text, inline images, and DRM. EPUB files can be read on a variety of devices and platforms. \\
+  \hline
+  PDF & A popular format for ebooks that preserves the original formatting and layout of the document. PDF files can be viewed on a wide range of devices, but may not be optimized for smaller screens. \\
+  \hline
+  MOBI & A format developed by Amazon for use on their Kindle devices. MOBI files support advanced features such as reflowable text, adjustable fonts, and inline images. \\
+  \hline
+  Markdown & A lightweight markup language that is easy to write and read. Markdown files can be easily converted to a variety of formats including HTML, PDF, and EPUB. \\
+  \hline
+  HTML & A web-based format for ebooks that can be read in any modern web browser. HTML files can include advanced features such as multimedia content and interactive elements. \\
+  \hline
+  \end{tabular}
+  \label{fig32}
+  \end{table}
+  
 
-\subsection{Future work}
+\section{Overall conclusion} 
 
-There is some work that needs to be done in the future to ensure this camera is used in online products.
+This report involved extensive market research and analysis, leading to the development of a initial demo that meets the requirements. 
+While we recognize that further communication and collaboration will be necessary to refine the final prototype.
+We are confident that this project has the potential to provide the iwi with a powerful electronic platform for sharing and connections. 
 
-\subsection{Todo List}
+This project holds significant importance for Waikatōhea iwi, because it aims to digitize the collection of books and create an electronic platform that can be accessed by iwi members and others. 
+By sharing iwi's culture and history through this platform, we hope to strengthen iwi community and build connections with each other. 
+This project is a step towards preserving the heritage and making it accessible to future generations.
+
 
