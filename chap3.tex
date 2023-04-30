@@ -1,113 +1,94 @@
-\chapter{Frontend Design}
+\chapter{Prototype Design}
 
-\section{Introduction}
-\lettrine[lines=2]{I}\\n this chapter, we will summarise all the previous research, with a particular focus on users, book format reading experience, sharing, communication and other functions in detail. 
-At the same time, we will filter the common E-book formats available on the market from a technical perspective, expecting to find a suitable format among them.
+\section{Project background and purpose}
+\lettrine[lines=2]{I}\\n The aim of this project is to design and develop a prototype digital library for Māori language users to meet the needs of Māori language users for book retrieval, borrowing and return functions, and to improve the library experience for Māori language users. The prototype library is aimed at the Maori speaking community around the world, including Maori teachers, students, parents and general users.
 
-\section{Research summary}
+Māori language is one of the official languages of New Zealand's indigenous Maori people and is an important part of New Zealand's cultural and social development. In order to promote the heritage and development of the Maori language, the prototype digital library will provide Maori language users with rich and diverse Maori language book resources to facilitate their online reading and learning, and will also make a positive contribution to Maori language education and cultural heritage.
 
-The structure of the book resources shown as Fig~\ref{fig30} is supported by most of the current platforms. 
+\section{Design principles and methodology}
+
+The design of the digital library prototype will follow the following principles:
+
+User-centered: The project will focus on user needs, user experience and satisfaction, to provide users with efficient and convenient humanized services.
+
+Diversity and inclusion: The digital library prototype will provide a variety of resources from the rich and diverse Māori language culture, covering different areas and topics, embracing a variety of cultures and ideologies, and reflecting the diversity of Māori culture.
+
+\section{Prototype introduction}
+
+\subsection{Main interface}
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=500pt]{images/collections.png}}
-  \caption{Collections}
+  \centerline{\includegraphics[width=500pt]{images/3-1-1.png}}
+  \caption{Main interface}
   \label{fig30}
 \end{figure}
 
-Commonly supported data formats are E-books, audio, video and pictures. 
-They are all grouped together by subject, similar to how a library book index is managed. 
-Because the audio is often in the form of a playlist, it is a little deeper in the hierarchy. 
+After the user logs in, the main interface will show the Māori cultural background, the address of the Maori cultural community, the pictures of the introduction of Maori cultural activities, the links of E-books and multimedia, and the search function of the whole network. Here you can find all the resources we upload and provide, and you can also ask for help to carry out Māori language practice in the community and communicate with other Maori language learners.
 
-User sharing and connection is a weakness of these platforms.
-This is because the fact that platforms are often seen as purely online libraries.
-It is common that a platforms do not take into account the online user community.
-
-\section{Demo}
-
-In this initial demo, our main considerations are compatibility and usability.
-
-\subsection{compatibility}
-
-Because the user range is 13 to 18 years old and there is a possibility of future expansion to other user ranges, compatibility is the first thing. 
-This is because good compatibility across multiple devices will minimise the cost of future development for the habits of different age groups.
-They can use this platform on multiple devices.
-
-As same as other common platforms, we can take HTML5 responsive development to get an interface that is compatible with both pc and mobile devices.
-So that only one development is needed to get a consistent user experience on PC, mobile, ipad and other devices at the same time.
-
-\subsection{usability}
-
-Usability is mainly concerned with the different experiences with different file formats.
-It is also known as the reader experience. 
-
-\subsubsection{Books}
-
-A reader in book format is shown in the left of Fig~\ref{fig31}.
-The most important elements are page turning, sharing and commenting. 
-Turning pages allows a book to be partly free and partly paid for or partly open to visitors in the future. 
-Sharing and commenting is a very important place to keep people of the tribe connected. 
+\subsection{User interface}
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=500pt]{images/Book.png}}
-  \caption{Books, Videos, Audios Readers}
-  \label{fig31}
+  \centerline{\includegraphics[width=500pt]{images/3-1-2.png}}
+  \caption{User interface}
+  \label{fig30}
 \end{figure}
 
-\subsubsection{Videos}
+After the user logs in, The system will record user information, users can modify information through the user interface, view browsing history and like the collection of E-books or multimedia, also can communicate with friends here and view the comments of E-books or multimedia.
 
-The reader for videos is shown in the middle of Fig~\ref{fig31}. 
-It needs to be a very versatile video player. 
-Unlike the last one, its key features need to include subtitles, volume, progress bars and so on.
+\subsection{Māori cultural interface}
 
-\subsubsection{Audios} 
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/3-1-3.png}}
+  \caption{Māori cultural interface}
+  \label{fig30}
+\end{figure}
 
-The reader for audios is shown in the right of Fig~\ref{fig31}. 
-It needs to work as well as some mp3 online players. 
-Its important features need to include previous song, next song, jumbled play and possibly lyrics like subtitles too.
+We add a Māori culture interface where users can find all about the development process of Māori culture, migration history and distribution changes, as well as the existing Māori cultural products, which will provide more research channels for current and future learners of Māori culture, from buildings, objects to custom products to show the development process of Māori culture in all aspects.
 
-\subsubsection{Images}
+\subsection{E-books browsing interface}
 
-The reader for images is similar as books. 
-There may be a need for a previous next picture viewing mode.
-And there may be a choice of resolutions to suit the speed of the network.
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/3-2-1.png}}
+  \caption{E-books browsing interface}
+  \label{fig30}
+\end{figure}
 
-\section{E-book formats}
-We have collected and collated a range of E-book data formats (Table \ref{fig32}) and selected the ones that suit this project.
-They are only aggregated from a technical level so they are senseless to end users. 
-In the actual project, there is also the possibility of adapting the final data format to suit the trade-off between network speed and resource quality.
+In the E-books browsing interface, users can search related E-books through filters, and all filters we designed include the function of voice input, which can provide convenience for some disabled learners. Typing a keyword in the filter or filtering in the left toolbar will display the relevant E-books.
 
-On the other hand, if the current file formats fail to meet the requirements, it may be necessary to develop a proprietary format to achieve the optimal user experience.
+\subsection{The E-book interface}
 
-\begin{table}[h]
-  \centering
-  \caption{Ebook formats}
-  \begin{tabular}{|c|p{10cm}|}
-  \hline
-  \textbf{Ebook format} & \textbf{Description} \\
-  \hline
-  EPUB & A widely used open standard for ebooks that supports reflowable text, inline images, and DRM. EPUB files can be read on a variety of devices and platforms. \\
-  \hline
-  PDF & A popular format for ebooks that preserves the original formatting and layout of the document. PDF files can be viewed on a wide range of devices, but may not be optimized for smaller screens. \\
-  \hline
-  MOBI & A format developed by Amazon for use on their Kindle devices. MOBI files support advanced features such as reflowable text, adjustable fonts, and inline images. \\
-  \hline
-  Markdown & A lightweight markup language that is easy to write and read. Markdown files can be easily converted to a variety of formats including HTML, PDF, and EPUB. \\
-  \hline
-  HTML & A web-based format for ebooks that can be read in any modern web browser. HTML files can include advanced features such as multimedia content and interactive elements. \\
-  \hline
-  \end{tabular}
-  \label{fig32}
-  \end{table}
-  
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/3-2-2.png}}
+  \caption{The E-book interface}
+  \label{fig30}
+\end{figure}
 
-\section{Overall conclusion} 
+In the E-books interface, users can read text or listen to E-books through the voice playback function, and provide translation functions for other languages. All resources provided by the e-library are downloadable.
 
-This report involved extensive market research and analysis, leading to the development of a initial demo that meets the requirements. 
-While we recognize that further communication and collaboration will be necessary to refine the final prototype.
-We are confident that this project has the potential to provide the iwi with a powerful electronic platform for sharing and connections. 
+\subsection{Video interface}
 
-This project holds significant importance for Waikatōhea iwi, because it aims to digitize the collection of books and create an electronic platform that can be accessed by iwi members and others. 
-By sharing iwi's culture and history through this platform, we hope to strengthen iwi community and build connections with each other. 
-This project is a step towards preserving the heritage and making it accessible to future generations.
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/3-3-1.png}}
+  \caption{Video interface}
+  \label{fig30}
+\end{figure}
 
+In the video interface, users can search related videos by keywords or related words. The filter provides many options such as upload time, picture quality, video duration, and subtitles in other language to facilitate Māori learners to view.
 
+\subsection{Audio interface}
+
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=500pt]{images/3-3-2.png}}
+  \caption{Audio interface}
+  \label{fig30}
+\end{figure}
+
+In the audio interface, users can search related audio by the keywords or related words. When playing audio files, subtitles in other languages will be displayed synchronously in the player, and the audio content will be displayed on the left side, which can provide learning convenience for Māori language learners. Audio related videos or pictures are displayed below, which provides a good learning environment for audio learning and deefies learners' memory.
+
+\section{Conclusion and Prospect}
+
+Through the design and implementation of this project, the prototype of digital library for Maori users has realized the main functions such as book and multimedia retrieval. The library prototype can provide rich and diverse Maori cultural resources to facilitate users to read and learn online.
+
+The designed prototype still has some limitations and shortcomings, including the process of user interface design and interaction can be further optimized, the function of multimedia interface can be more humanized, and the front-end visualization of the library can be more abundant to meet all Maori culture learners for learning.
+
+As technology continues to advance and the Maori language community continues to grow, the digital library prototype needs to be constantly updated and upgraded to meet the changing needs and expectations of its users. At the same time, the digital library will also make greater contributions to the Maori language education and cultural inheritance, promote the inheritance and development of the Maori language, and promote the communication and integration of multiple cultures. We look forward to the Maori Digital library becoming an important learning and communication platform for Maori language users and making greater contributions to the future development of the Maori language community.
