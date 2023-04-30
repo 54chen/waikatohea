@@ -51,7 +51,7 @@
 \usepackage{enumitem}
 \usepackage{pifont}
 \addbibresource{biblio.bib}
-\usepackage{xcolor} 
+\usepackage{xcolor}
 
 \usepackage{listings} 
 \lstset{language=bash,
@@ -62,6 +62,10 @@
         showspaces = false,
         }  
 
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+        
+        
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEfinition d'un nouveau style de page qui supprime l'entete et garde le numero de page
@@ -138,13 +142,15 @@
 \pagenumbering{arabic}
 \titlespacing{\chapter}{0cm}{1cm}{2cm}
 \addcontentsline{toc}{chapter}{General introduction}
-\input{introduction.tex}
+% \input{introduction.tex}
 
 \input{chap1.tex}
 
 \input{chap2.tex}
  
 \input{chap3.tex}
+
+\input{chap4.tex}
 
 % \bibliographystyle{plain}
 % \bibliography{biblio}
