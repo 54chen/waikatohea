@@ -5,7 +5,9 @@
 \usepackage{cappar}
 \usepackage{amssymb}
 \usepackage[english, french]{babel}
-\usepackage[backend=biber]{biblatex}
+% \usepackage[backend=biber, citestyle=APA, autocite=inline]{biblatex}
+\usepackage[backend=biber, style=apa, autocite=inline]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
 \usepackage{maori}
 
 %\usepackage{arabtex} 
@@ -18,6 +20,18 @@
 %\usepackage{eufrack}
 %\usepackage{epsf}
 \usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Template},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
 %\pagestyle{headings}
 %------------la profondeur du document
    %% Visibles dans la table des matieres
