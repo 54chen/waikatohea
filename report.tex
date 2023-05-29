@@ -88,7 +88,7 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.5pt}
- \fancyfoot[LE,LO]{\textit {Report of first prototype - CSMAX570-23A}}
+ \fancyfoot[LE,LO]{\textit {Report of final prototype - CSMAX570-23A}}
  \fancyfoot[RE,RO]{\bfseries\thepage}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,9 +101,9 @@
 %----------------------------------------------------------------------------
 \thispagestyle{empty}
 \input{PageDeGarde.tex}
-
+\pagenumbering{roman} 
+\setcounter{page}{2}
 %----------------------------------------
-\pagenumbering{roman} \setcounter{page}{1}
 
 %----------------------------------------------------------------------------
 %   La tables des matieres, des figures et la liste des tableaux
@@ -111,13 +111,14 @@
 \setcounter{secnumdepth}{11}  %% Avec un numero.
 \setcounter{tocdepth}{3}
 %Ceci permet davoir les noms de chapitre et de section en minuscules
-\renewcommand{\chaptermark}[1]{\markboth{Chapter ~\thechapter~:~#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{~#1}{}}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{}{0pt}{\Huge}
 %\renewcommand{\sectionmark}[1]{\markright{\thesection\#1}}
 \fancyhf{}
 %supprime les entetes et pieds existant
 %\fancyhead[LE,LO]{\bfseries{Projet de fin d'études}}
 \fancyhead[RE,RO]{\bfseries\leftmark}
-\fancyfoot[LE,LO]{\textit {Report of first prototype - CSMAX570-23A }} \fancyfoot[RE,RO]{\bfseries\thepage}
+\fancyfoot[LE,LO]{\textit {Report of final prototype - CSMAX570-23A }} \fancyfoot[RE,RO]{\bfseries\thepage}
 %\renewcommand{\headrulewidth}{0.5pt}
 %\renewcommand{\footrulewidth}{0.5pt}
  
@@ -147,15 +148,15 @@
   % \includegraphics[height=1cm]{./images/garde/ensi.jpg}
   % \end{center}\vspace{-0.2cm}}
 %\rhead{} \lfoot{} \cfoot{- \thepage/\pageref{LastPage} -} \rfoot{}
-
+ 
 
 
 
 %---- General Introduction
 
 \pagenumbering{arabic}
-\titlespacing{\chapter}{0cm}{1cm}{2cm}
-\addcontentsline{toc}{chapter}{General introduction}
+% \titlespacing{\chapter}{0cm}{1cm}{2cm}
+% \addcontentsline{toc}{chapter}{General introduction}
 % \input{introduction.tex}
 
 \input{chap1.tex}
