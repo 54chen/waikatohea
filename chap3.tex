@@ -1,95 +1,113 @@
-\chapter{Prototype Design}
-\chaptermark{Prototype Design}
+\chapter{Backend design} 
+\chaptermark{Backend design}
 
+\section*{Introduction}
 
-The aim of this project is to design and develop a prototype digital library for Māori language users to meet the needs of Māori language users for book retrieval, borrowing and return functions, and to improve the library experience for Māori language users. The prototype library is aimed at the Maori speaking community around the world, including Maori teachers, students, parents and general users\autocite{Pixso0:online}.
+In our previous report, we extensively examined the organizational structure of historical ebooks. 
+However, for this particular presentation, our primary focus shifts towards exploring the application of artificial intelligence (AI) in this domain.
 
-Māori language is one of the official languages of New Zealand's indigenous Maori people and is an important part of New Zealand's cultural and social development. In order to promote the heritage and development of the Maori language, the prototype digital library will provide Maori language users with rich and diverse Maori language book resources to facilitate their online reading and learning, and will also make a positive contribution to Maori language education and cultural heritage\autocite{Discover30:online}.
+To begin, we have provided a brief overview of our prior research, which primarily centered on the organization of ebooks. 
+It became apparent that different versions and adaptations were necessary to cater to diverse age groups. 
+Consequently, we delved into two main approaches aimed at effectively structuring the content.
 
-\section{Design principles and methodology}
+The first approach involved organizing the material around critical historical events and notable figures, with the objective of offering readers a comprehensive understanding of Māori history. 
+This method sought to enrich readers' knowledge of Māori history by delving into the intricacies of historical events and significant personalities.
 
-The design of the digital library prototype will follow the following principles:
+The second approach focused on aligning the content with local primary and secondary school curricula to ensure its relevance in the education of younger readers. 
+Recognizing the importance of addressing the specific needs and developmental stages of these readers, we tailored the content accordingly to resonate with their educational framework.
 
-User-centered: The project will focus on user needs, user experience and satisfaction, to provide users with efficient and convenient humanized services.
+Building upon our previous research, the forthcoming presentation will primarily delve into the application of AI techniques within Māori historical ebooks. 
+Specifically, we will explore how AI tools can effectively address the challenges associated with collecting images, audio, and textual resources for these books. 
+However, it is imperative to acknowledge the current limitations of AI tools, necessitating caution in their utilization, particularly in critical areas. 
+To ensure the appropriateness of materials, comprehensive guidelines on the effective use of AI tools will be provided. 
+Moreover, continuous review and updates of the materials will be conducted to ensure their accuracy and relevance.
 
-Diversity and inclusion: The digital library prototype will provide a variety of resources from the rich and diverse Māori language culture, covering different areas and topics, embracing a variety of cultures and ideologies, and reflecting the diversity of Māori culture.
+\section{Two structures} 
 
-\section{Prototype introduction}
+To create a foundation for the ebook design, we have collected significant events in Māori history (Tab~\ref{tab:maori_history}) and assigned them unique identifiers to indicate their respective timelines. 
+When generating the ebooks, we must determine the historical stage to which the book belongs, which will enable us to identify the relevant events and ensure that the book's content is correctly contextualized. 
+Additionally, we will determine the appropriate grade level for the book, ensuring that the content is suitable for the target audience's age and education level. 
+By establishing these parameters, we can create ebooks that are both informative and engaging for readers (Fig~\ref{s-1} and Fig~\ref{s-2}).
 
-\subsection{Main interface}
+\begin{table}[htbp]
+  \centering
+  \caption{New Zealand Māori History Timeline}
+  \label{tab:maori_history}
+  \begin{tabular}{|c|L{3cm}|L{5cm}|L{2cm}|}
+    \hline
+    \textbf{ID} & \textbf{Date Range} & \textbf{Event} & \textbf{Location} \\
+    \hline
+    1 & c. 800-1300 & Polynesian ancestors arrive in New Zealand and establish settlements & Multiple \\
+    \hline
+    2 & 1642 & Dutch explorer Abel Tasman encounters Māori in Golden Bay & South Island \\
+    \hline
+    3 & 1769-70 & British explorer Captain James Cook charts New Zealand and has first contact with Māori & Multiple \\
+    \hline
+    4 & 1814-1840 & Musket Wars between Māori tribes for control of resources and territory & North Island \\
+    \hline
+    5 & 1835 & Declaration of Independence of New Zealand by Māori chiefs & North Island \\
+    \hline
+    6 & 1840 & Treaty of Waitangi signed between Māori chiefs and British Crown, establishing British sovereignty over New Zealand & North Island \\
+    \hline
+    7 & 1843-47 & New Zealand Wars fought between Māori and British colonizers & North Island \\
+    \hline
+    8 & 1860-72 & Land Wars fought between Māori and British colonizers & North Island \\
+    \hline
+    9 & 1893 & Women's suffrage granted in New Zealand, the first country in the world to do so & Multiple \\
+    \hline
+    10 & 1975 & Treaty of Waitangi Act established to address Māori grievances and provide restitution & North Island \\
+    \hline
+  \end{tabular}
+\end{table}
 
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-1-1.png}}
-  \caption{Main interface}
-  \label{fig30}
-\end{figure}
-
-After the user logs in, the main interface will show the Māori cultural background (Fig~\ref{fig30}), the address of the Maori cultural community, the pictures of the introduction of Maori cultural activities, the links of E-books and multimedia, and the search function of the whole network. Here you can find all the resources we upload and provide, and you can also ask for help to carry out Māori language practice in the community and communicate with other Maori language learners.
-
-\subsection{User interface}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-1-2.png}}
-  \caption{User interface}
-  \label{fig31}
-\end{figure}
-
-After the user logs in, The system will record user information, users can modify information through the user interface, view browsing history and like the collection of E-books or multimedia, also can communicate with friends here and view the comments of E-books or multimedia(Fig~\ref{fig31}).
-
-\subsection{Māori cultural interface}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-1-3.png}}
-  \caption{Māori cultural interface}
-  \label{fig32}
-\end{figure}
-
-We add a Māori culture interface where users can find all about the development process of Māori culture(Fig~\ref{fig32}), migration history and distribution changes, as well as the existing Māori cultural products, which will provide more research channels for current and future learners of Māori culture, from buildings, objects to custom products to show the development process of Māori culture in all aspects\autocite{MaoriCul4:online}.
-
-\subsection{E-books browsing interface}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-2-1.png}}
-  \caption{E-books browsing interface}
-  \label{fig33}
-\end{figure}
-
-In the E-books browsing interface(Fig~\ref{fig33}), users can search related E-books through filters, and all filters we designed include the function of voice input, which can provide convenience for some disabled learners. Typing a keyword in the filter or filtering in the left toolbar will display the relevant E-books.
-
-\subsection{The E-book interface}
-
-\begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-2-2.png}}
-  \caption{The E-book interface}
-  \label{fig34}
-\end{figure}
-
-In the E-books interface(Fig~\ref{fig34}), users can read text or listen to E-books through the voice playback function, and provide translation functions for other languages. All resources provided by the e-library are downloadable.
-
-\subsection{Video interface}
+In Fig~\ref{s-1}, each grade level has a unique directory with the ability to add or remove directories, making the management of the book's structure more flexible. All books will initially belong to a fixed directory.
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-3-1.png}}
-  \caption{Video interface}
-  \label{fig35}
+  \centerline{\includegraphics[width=300pt]{images/s-1.png}}
+  \caption{Choose different grade levels}
+  \label{s-1}
 \end{figure}
 
-In the video interface(Fig~\ref{fig35}), users can search related videos by keywords or related words. The filter provides many options such as upload time, picture quality, video duration, and subtitles in other language to facilitate Māori learners to view.
-
-\subsection{Audio interface}
+In Fig~\ref{s-2}, before uploading the necessary materials to generate a book, it is necessary to confirm the historical period to which it belongs. This allows a book under development to potentially belong to both structures simultaneously. This also makes it easier to have a variety of content organization forms in the subsequent prototypes.
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=400pt]{images/3-3-2.png}}
-  \caption{Audio interface}
-  \label{fig36}
+  \centerline{\includegraphics[width=300pt]{images/s-2.jpg}}
+  \caption{Choose history and grade levels}
+  \label{s-2}
 \end{figure}
 
-In the audio interface(Fig~\ref{fig36}), users can search related audio by the keywords or related words. When playing audio files, subtitles in other languages will be displayed synchronously in the player, and the audio content will be displayed on the left side, which can provide learning convenience for Māori language learners. Audio related videos or pictures are displayed below, which provides a good learning environment for audio learning and deefies learners' memory\autocite{MaoriHis64:online}.
+\section{AI tools}
 
-\section{Conclusion and Prospect}
+To reduce the difficulty of finding related materials, non-essential elements such as background images that do not affect the core content but serve a decorative purpose are added in places that are not critical. This enables the book to quickly obtain various styles.
 
-Through the design and implementation of this project, the prototype of digital library for Maori users has realized the main functions such as book and multimedia retrieval. The library prototype can provide rich and diverse Maori cultural resources to facilitate users to read and learn online\autocite{Maori–Te85:online}.
+The following functionalities may be required in the backend to improve the convenience of generating books and reduce the need for auxiliary materials:
 
-The designed prototype still has some limitations and shortcomings, including the process of user interface design and interaction can be further optimized, the function of multimedia interface can be more humanized, and the front-end visualization of the library can be more abundant to meet all Maori culture learners for learning.
+Built-in image and sound libraries: This would allow for quick access to a collection of images and sounds that are relevant to the book's topic.
 
-As technology continues to advance and the Maori language community continues to grow, the digital library prototype needs to be constantly updated and upgraded to meet the changing needs and expectations of its users. At the same time, the digital library will also make greater contributions to the Maori language education and cultural inheritance, promote the inheritance and development of the Maori language, and promote the communication and integration of multiple cultures. We look forward to the Maori Digital library becoming an important learning and communication platform for Maori language users and making greater contributions to the future development of the Maori language community\autocite{MaoriCul16:online}.
+Content suggestion engine: This could be an AI-powered tool that suggests related content or sources based on the book's topic.
+
+Integrated translation tools: This would allow for easy translation of the book's content into multiple languages.
+
+Automated formatting and layout tools: This would make it easier to create professional-looking books with consistent formatting and layout.
+
+\section{A actual example}
+
+As illustrated in Fig~\ref{s-3}, Stable Diffusion\autocite{StableDi96:online} was utilized to generate images based on text for the cover of the book. 
+While text to speech technologies can be employed to include audio in the content, accurately modeling Māori language is a significant challenge due to its limited usage. 
+Nonetheless, several research teams\autocite{PapaReo84:online} \autocite{KaituhiA38:online} are dedicated to addressing this difficulty, both in terms of text to speech and speech to text technologies. 
+As for the third text content, generating appropriate images was feasible due to the usage of English. 
+Moreover, machine translation is challenging for minority languages, with only Microsoft announcing support for Māori language\autocite{Kiaorate17:online}. 
+Meanwhile, other tools such as ffmpeg can extract images from videos, facilitating the process of book generation.
+
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=300pt]{images/s-3.jpg}}
+  \caption{A ebook generated by AI}
+  \label{s-3}
+\end{figure}
+
+\section{Conclusion}
+Overall, the dual attributes of history and grade curriculum make the organization of books more flexible, and the introduction of AI tools is purely to reduce the difficulty of collecting materials when generating books. 
+However, the current AI tools, such as text to image tools, still have high uncertainty in their results and require significant investment. 
+This part may be a problem that must be considered, as it is not enough to simply introduce a service provider to complete it.
+
+All prototypes mentioned in this section have been implemented and can be accessed through the following URL\autocite{Page1wh37:online}.
