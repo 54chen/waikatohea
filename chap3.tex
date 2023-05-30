@@ -1,10 +1,10 @@
 \chapter{Backend design} 
 \chaptermark{Backend design}
 
-\section*{Introduction}
+\section{Introduction}
 
-In our previous report, we extensively examined the organizational structure of historical ebooks. 
-However, for this particular presentation, our primary focus shifts towards exploring the application of artificial intelligence (AI) in this domain.
+In our previous report, we examined the organizational structure of historical ebooks. 
+However, for this particular report, our primary focus shifts towards exploring the application of artificial intelligence (AI) in this domain.
 
 To begin, we have provided a brief overview of our prior research, which primarily centered on the organization of ebooks. 
 It became apparent that different versions and adaptations were necessary to cater to diverse age groups. 
@@ -16,98 +16,119 @@ This method sought to enrich readers' knowledge of Māori history by delving int
 The second approach focused on aligning the content with local primary and secondary school curricula to ensure its relevance in the education of younger readers. 
 Recognizing the importance of addressing the specific needs and developmental stages of these readers, we tailored the content accordingly to resonate with their educational framework.
 
-Building upon our previous research, the forthcoming presentation will primarily delve into the application of AI techniques within Māori historical ebooks. 
+Building upon our previous research, the forthcoming report will primarily delve into the application of AI techniques within Māori historical ebooks. 
 Specifically, we will explore how AI tools can effectively address the challenges associated with collecting images, audio, and textual resources for these books. 
 However, it is imperative to acknowledge the current limitations of AI tools, necessitating caution in their utilization, particularly in critical areas. 
 To ensure the appropriateness of materials, comprehensive guidelines on the effective use of AI tools will be provided. 
 Moreover, continuous review and updates of the materials will be conducted to ensure their accuracy and relevance.
 
-\section{Two structures} 
+This section of the report will focus on how to utilize AI-related tools in the context of the previously mentioned significant prototypes. 
+The aim is to facilitate the generation of relevant materials for ebooks production in the administration backend. 
+Furthermore, this section will delve into the techniques involved in generating images, audio, and text.
 
-To create a foundation for the ebook design, we have collected significant events in Māori history (Tab~\ref{tab:maori_history}) and assigned them unique identifiers to indicate their respective timelines. 
-When generating the ebooks, we must determine the historical stage to which the book belongs, which will enable us to identify the relevant events and ensure that the book's content is correctly contextualized. 
-Additionally, we will determine the appropriate grade level for the book, ensuring that the content is suitable for the target audience's age and education level. 
-By establishing these parameters, we can create ebooks that are both informative and engaging for readers (Fig~\ref{s-1} and Fig~\ref{s-2}).
+\section{How to generate images} 
 
-\begin{table}[htbp]
-  \centering
-  \caption{New Zealand Māori History Timeline}
-  \label{tab:maori_history}
-  \begin{tabular}{|c|L{3cm}|L{5cm}|L{2cm}|}
-    \hline
-    \textbf{ID} & \textbf{Date Range} & \textbf{Event} & \textbf{Location} \\
-    \hline
-    1 & c. 800-1300 & Polynesian ancestors arrive in New Zealand and establish settlements & Multiple \\
-    \hline
-    2 & 1642 & Dutch explorer Abel Tasman encounters Māori in Golden Bay & South Island \\
-    \hline
-    3 & 1769-70 & British explorer Captain James Cook charts New Zealand and has first contact with Māori & Multiple \\
-    \hline
-    4 & 1814-1840 & Musket Wars between Māori tribes for control of resources and territory & North Island \\
-    \hline
-    5 & 1835 & Declaration of Independence of New Zealand by Māori chiefs & North Island \\
-    \hline
-    6 & 1840 & Treaty of Waitangi signed between Māori chiefs and British Crown, establishing British sovereignty over New Zealand & North Island \\
-    \hline
-    7 & 1843-47 & New Zealand Wars fought between Māori and British colonizers & North Island \\
-    \hline
-    8 & 1860-72 & Land Wars fought between Māori and British colonizers & North Island \\
-    \hline
-    9 & 1893 & Women's suffrage granted in New Zealand, the first country in the world to do so & Multiple \\
-    \hline
-    10 & 1975 & Treaty of Waitangi Act established to address Māori grievances and provide restitution & North Island \\
-    \hline
-  \end{tabular}
-\end{table}
+Currently, generative AI is rapidly advancing, and there are numerous options available for utilizing AI-generated images as tools. 
+When using AI to generate images, it is important to note that there is no definitive numerical measure to evaluate the similarity between generated images and the training set images in the context of generating adversarial images. 
+Objective and subjective criteria are often required to assess the diversity of the images and determine if they are free from obvious inaccuracies. 
+Nevertheless, with human intervention, highly acceptable images can be obtained. 
 
-In Fig~\ref{s-1}, each grade level has a unique directory with the ability to add or remove directories, making the management of the book's structure more flexible. All books will initially belong to a fixed directory.
+This prototype clearly highlights the issue of a shortage of resources for backgrounds, covers, and illustrations in ebooks. 
+This undoubtedly provides ample opportunities for generative AI to be utilized effectively, significantly reducing the production costs associated with generating ebooks for staff members.
+
+\subsection{Prototype}
+
+In the prototype shown in Fig~\ref{s-1}, a backend administrator has the ability to generate new books using an editor provided in the backend. 
+The administrator can extract a portion of text from the editor, which can be in either Māori or English, to serve as the content for generating images. 
+Upon clicking a button, the backend system will attempt to generate multiple images in different styles. 
+It is then up to the administrator to manually select the best image. 
+This design approach helps to mitigate the issue of instability in generative networks' results. 
+Furthermore, the manually selected data can be collected and analyzed for statistical purposes. 
+In future training iterations, this data can serve as feedback, contributing to a system that better aligns with the desired Māori style.
 
 \begin{figure}[htbp]
   \centerline{\includegraphics[width=300pt]{images/s-1.png}}
-  \caption{Choose different grade levels}
+  \caption{Generate images by a backend administrator}
   \label{s-1}
 \end{figure}
 
-In Fig~\ref{s-2}, before uploading the necessary materials to generate a book, it is necessary to confirm the historical period to which it belongs. This allows a book under development to potentially belong to both structures simultaneously. This also makes it easier to have a variety of content organization forms in the subsequent prototypes.
+\subsection{Resources}
+
+Regarding methods for generating meaningful images using generative AI, there are already several excellent commercial services available on the market. 
+Among them, DALL·E \autocite{DALL·E99:online} from OpenAI and Stable Diffusion \autocite{StableDi18:online} are particularly well-known. 
+Additionally, it is also possible to train such models independently. 
+Although this may incur high hardware costs, leveraging cloud computing could potentially be more cost-effective compared to directly using third-party commercial services.
+If choosing to manually train such models, it is advisable to consider working based on the open-source project mentioned in this paper \autocite{rombach2021highresolution}.
+
+It is important to note that Māori, being a minority language, may not receive extensive support from many commercial models. 
+Additionally, when training models independently, it can be challenging to find sufficient training data for Māori language. 
+However, there are some companies that offer models specifically designed for minority languages like Māori. 
+For instance, Microsoft claims that their translator provides excellent support for Māori language \autocite{Smartter6:online}.
+
+\section{How to generate audio}
+
+The main scenarios where AI-generated speech is utilized include enabling individuals with visual impairments to navigate through ebooks using voice commands and directly playing the content of the book. 
+In this prototype, the envisioned languages include Māori and English. 
+This essentially involves the application of text-to-speech and speech-to-text technologies. 
+With the continuous advancements in neural networks, these technologies have already achieved remarkable accuracy in addressing English language requirements. 
+However, for minority languages, the lack of sufficient accurate resources has posed challenges in finding viable solutions to complete this prototype. 
+Fortunately, thanks to the recent release of a new version of a project by Facebook \autocite{Introduc20:online}, which utilized voice data from over 1,100 different languages reading the Bible, highly favorable results have been achieved.
+
+\subsection{Prototype}
+
+The prototype depicted in Fig~\ref{s-2} illustrates a scenario where a visually impaired user is reading an e-book. 
+The ebook can be in either Māori or English. 
+Through voice commands, the user is able to navigate through the pages and have the book's content played aloud. 
+Due to the high accuracy of current models, these operations can be directly performed in the frontend without the need for administrator intervention.
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=300pt]{images/s-2.jpg}}
-  \caption{Choose history and grade levels}
+  \centerline{\includegraphics[width=300pt]{images/s-2.png}}
+  \caption{Play audio by a enabling individuals}
   \label{s-2}
 \end{figure}
 
-\section{AI tools}
+\subsection{Resources}
 
-To reduce the difficulty of finding related materials, non-essential elements such as background images that do not affect the core content but serve a decorative purpose are added in places that are not critical. This enables the book to quickly obtain various styles.
+Due to the rapid advancements in AI, timeliness is crucial in selecting appropriate technologies. 
+Currently, Facebook's solution appears to be the best option as it can support both Māori and English. 
+However, other companies' technologies can also be considered, such as OpenAI's open-source Whisper \autocite{Introduc57:online} or Mozilla's TTS \autocite{mozillaT63:online}. 
+It may require collaboration among multiple models to meet the requirements of the prototype, and further research is needed to assess the support for Māori language.
 
-The following functionalities may be required in the backend to improve the convenience of generating books and reduce the need for auxiliary materials:
+\section{How to generate text}
 
-Built-in image and sound libraries: This would allow for quick access to a collection of images and sounds that are relevant to the book's topic.
+Today, large language models have gained tremendous popularity. 
+Harnessing the power of these models, we can consider utilizing their summarization capabilities to generate test questions and answers of varying difficulty levels for our book. 
+These can be used as quizzes following the study of the material in the course.
 
-Content suggestion engine: This could be an AI-powered tool that suggests related content or sources based on the book's topic.
+\subsection{Prototype}
 
-Integrated translation tools: This would allow for easy translation of the book's content into multiple languages.
+The prototype shown in Fig~\ref{s-3} consists of a text excerpt derived from the corresponding book. 
+Through this text, the most crucial information can be summarized, and a batch of possible questions and answers can be generated. 
 
-Automated formatting and layout tools: This would make it easier to create professional-looking books with consistent formatting and layout.
-
-\section{A actual example}
-
-As illustrated in Fig~\ref{s-3}, Stable Diffusion\autocite{StableDi96:online} was utilized to generate images based on text for the cover of the book. 
-While text to speech technologies can be employed to include audio in the content, accurately modeling Māori language is a significant challenge due to its limited usage. 
-Nonetheless, several research teams\autocite{PapaReo84:online} \autocite{KaituhiA38:online} are dedicated to addressing this difficulty, both in terms of text to speech and speech to text technologies. 
-As for the third text content, generating appropriate images was feasible due to the usage of English. 
-Moreover, machine translation is challenging for minority languages, with only Microsoft announcing support for Māori language\autocite{Kiaorate17:online}. 
-Meanwhile, other tools such as ffmpeg can extract images from videos, facilitating the process of book generation.
+Firstly, the administrator can define the difficulty level, grade level, and the desired number of questions for the current quiz. 
+Subsequently, due to the instability of AI model results, it requires backend confirmation by the administrator before saving the questions as test items. 
+In this process, the administrator has the ability to modify and delete questions and answers, making the generated quiz more targeted. 
+During this process, support for both Māori and English languages should be available, but not all large language models can provide this capability. 
+Careful consideration should be given when selecting a model to ensure it meets these requirements.
 
 \begin{figure}[htbp]
-  \centerline{\includegraphics[width=300pt]{images/s-3.jpg}}
-  \caption{A ebook generated by AI}
+  \centerline{\includegraphics[width=300pt]{images/s-3.png}}
+  \caption{Generate quizzes by AI}
   \label{s-3}
 \end{figure}
 
+\subsection{Resources}
+
+There are abundant resources available for this task. 
+Firstly, one option is to directly utilize the commercial API of ChatGPT, which provides an excellent user experience. 
+So far, it is the only system that has achieved comprehensive text summarization and abstraction tasks. 
+Secondly, if the chosen solution lacks support for Māori language, Microsoft's Māori language translation mentioned earlier can be integrated. 
+This allows for translation into English, followed by question generation. 
+Additionally, open-source projects such as Google's T5 model \autocite{roberts2022t5x} can also be considered.
+
 \section{Conclusion}
-Overall, the dual attributes of history and grade curriculum make the organization of books more flexible, and the introduction of AI tools is purely to reduce the difficulty of collecting materials when generating books. 
-However, the current AI tools, such as text to image tools, still have high uncertainty in their results and require significant investment. 
-This part may be a problem that must be considered, as it is not enough to simply introduce a service provider to complete it.
+This section of the report focuses on conducting research on the application of AI in the backend and, in conjunction with the prototype, collecting resources to effectively utilize AI in the frontend and particularly in the backend processes of ebook and test questions generation. 
+This simplifies the ebook generation process and provides significant convenience in accurately presenting Māori-related content. 
+In the preparation process of ebook materials in collaboration with Whakatōhea iwi, it is believed that this logic will play a crucial role in rapidly establishing the entire framework of Māori history-related content and testing system.
 
 All prototypes mentioned in this section have been implemented and can be accessed through the following URL\autocite{Page1wh37:online}.
