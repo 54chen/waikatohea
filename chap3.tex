@@ -4,10 +4,14 @@
 \section{Introduction}
 In the previous section, we discussed the prototype for end users. 
 In this section, our focus is primarily on the discussion of backend.
-In our last report, we examined the organizational structure of historical ebooks. 
+This section will focus on how to utilise AI-related tools in the context of the previously mentioned significant prototypes. 
+The aim is to facilitate the generation of relevant materials for eBooks production in the administration backend. 
+Furthermore, this section will delve into the techniques involved in generating images, audio, and text.
+
+In our last report, we examined the organizational structure of historical  eBooks. 
 However, for this particular report, our primary focus shifts towards exploring the application of artificial intelligence (AI) in this domain.
 
-To begin, we have provided a brief overview of our prior research, which primarily centered on the organization of ebooks. 
+To begin, we have provided a brief overview of our prior research, which primarily centered on the organization of  eBooks. 
 It became apparent that different versions and adaptations were necessary to cater to diverse age groups. 
 Consequently, we delved into two main approaches aimed at effectively structuring the content.
 
@@ -17,25 +21,21 @@ This method sought to enrich readers' knowledge of Māori history by delving int
 The second approach focused on aligning the content with local primary and secondary school curricula to ensure its relevance in the education of younger readers. 
 Recognizing the importance of addressing the specific needs and developmental stages of these readers, we tailored the content accordingly to resonate with their educational framework.
 
-Building upon our previous research, the forthcoming report will primarily delve into the application of AI techniques within Māori historical ebooks. 
+Building upon our previous research, the forthcoming report will primarily delve into the application of AI techniques within Māori historical  eBooks. 
 Specifically, we will explore how AI tools can effectively address the challenges associated with collecting images, audio, and textual resources for these books. 
-However, it is imperative to acknowledge the current limitations of AI tools, necessitating caution in their utilization, particularly in critical areas. 
+However, it is imperative to acknowledge the current limitations of AI tools, necessitating caution in their utilisation, particularly in critical areas. 
 To ensure the appropriateness of materials, comprehensive guidelines on the effective use of AI tools will be provided. 
 Moreover, continuous review and updates of the materials will be conducted to ensure their accuracy and relevance.
 
-This section of the report will focus on how to utilize AI-related tools in the context of the previously mentioned significant prototypes. 
-The aim is to facilitate the generation of relevant materials for ebooks production in the administration backend. 
-Furthermore, this section will delve into the techniques involved in generating images, audio, and text.
-
 \section{How to generate images} 
 
-Currently, generative AI is rapidly advancing, and there are numerous options available for utilizing AI-generated images as tools. 
+Currently, generative AI is rapidly advancing, and there are numerous options available for utilising AI-generated images as tools. 
 When using AI to generate images, it is important to note that there is no definitive numerical measure to evaluate the similarity between generated images and the training set images in the context of generating adversarial images. 
 Objective and subjective criteria are often required to assess the diversity of the images and determine if they are free from obvious inaccuracies. 
 Nevertheless, with human intervention, highly acceptable images can be obtained. 
 
-This prototype clearly highlights the issue of a shortage of resources for backgrounds, covers, and illustrations in ebooks. 
-This undoubtedly provides ample opportunities for generative AI to be utilized effectively, significantly reducing the production costs associated with generating ebooks for staff members.
+This prototype clearly highlights the issue of a shortage of resources for backgrounds, covers, and illustrations in  eBooks. 
+This undoubtedly provides ample opportunities for generative AI to be utilised effectively, significantly reducing the production costs associated with generating eBooks for staff members.
 
 \subsection{Prototype}
 
@@ -68,17 +68,17 @@ For instance, Microsoft claims that their translator provides excellent support 
 
 \section{How to generate audio}
 
-The main scenarios where AI-generated speech is utilized include enabling individuals with visual impairments to navigate through ebooks using voice commands and directly playing the content of the book. 
+The main scenarios where AI-generated speech is utilised include enabling individuals with visual impairments to navigate through eBooks using voice commands and directly playing the content of the book. 
 In this prototype, the envisioned languages include Māori and English. 
 This essentially involves the application of text-to-speech and speech-to-text technologies. 
 With the continuous advancements in neural networks, these technologies have already achieved remarkable accuracy in addressing English language requirements. 
 However, for minority languages, the lack of sufficient accurate resources has posed challenges in finding viable solutions to complete this prototype. 
-Fortunately, thanks to the recent release of a new version of a project by Facebook \autocite{Introduc20:online}, which utilized voice data from over 1,100 different languages reading the Bible, highly favorable results have been achieved.
+Fortunately, thanks to the recent release of a new version of a project by Facebook \autocite{Introduc20:online}, which utilised voice data from over 1,100 different languages reading the Bible, highly favorable results have been achieved.
 
 \subsection{Prototype}
 
-The prototype depicted in Fig~\ref{s-2} illustrates a scenario where a visually impaired user is reading an e-book. 
-The ebook can be in either Māori or English. 
+The prototype depicted in Fig~\ref{s-2} illustrates a scenario where a visually impaired user is reading an eBook. 
+The eBook can be in either Māori or English. 
 Through voice commands, the user is able to navigate through the pages and have the book's content played aloud. 
 Due to the high accuracy of current models, these operations can be directly performed in the frontend without the need for administrator intervention.
 
@@ -98,7 +98,7 @@ It may require collaboration among multiple models to meet the requirements of t
 \section{How to generate text}
 
 Today, large language models have gained tremendous popularity. 
-Harnessing the power of these models, we can consider utilizing their summarization capabilities to generate test questions and answers of varying difficulty levels for our book. 
+Harnessing the power of these models, we can consider utilising their summarization capabilities to generate test questions and answers of varying difficulty levels for our book. 
 These can be used as quizzes following the study of the material in the course.
 
 \subsection{Prototype}
@@ -121,15 +121,15 @@ Careful consideration should be given when selecting a model to ensure it meets 
 \subsection{Resources}
 
 There are abundant resources available for this task. 
-Firstly, one option is to directly utilize the commercial API of ChatGPT, which provides an excellent user experience. 
+Firstly, one option is to directly utilise the commercial API of ChatGPT, which provides an excellent user experience. 
 So far, it is the only system that has achieved comprehensive text summarization and abstraction tasks. 
 Secondly, if the chosen solution lacks support for Māori language, Microsoft's Māori language translation mentioned earlier can be integrated. 
 This allows for translation into English, followed by question generation. 
 Additionally, open-source projects such as Google's T5 model \autocite{roberts2022t5x} can also be considered.
 
 \section{Conclusion}
-This section of the report focuses on conducting research on the application of AI in the backend and, in conjunction with the prototype, collecting resources to effectively utilize AI in the frontend and particularly in the backend processes of ebook and test questions generation. 
-This simplifies the ebook generation process and provides significant convenience in accurately presenting Māori-related content. 
-In the preparation process of ebook materials in collaboration with Whakatōhea iwi, it is believed that this logic will play a crucial role in rapidly establishing the entire framework of Māori history-related content and testing system.
+This section of the report focuses on conducting research on the application of AI in the backend and, in conjunction with the prototype, collecting resources to effectively utilise AI in the frontend and particularly in the backend processes of eBook and test questions generation. 
+This simplifies the eBook generation process and provides significant convenience in accurately presenting Māori-related content. 
+In the preparation process of eBook materials in collaboration with Whakatōhea iwi, it is believed that this logic will play a crucial role in rapidly establishing the entire framework of Māori history-related content and testing system.
 
-All prototypes mentioned in this section have been implemented and can be accessed through the following URL\autocite{Page1wh37:online}.
+All prototypes mentioned in this section have been implemented and can be accessed through the following URL \autocite{Page1wh37:online}.
